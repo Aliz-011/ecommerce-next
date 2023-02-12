@@ -41,9 +41,9 @@ const Header = () => {
           </div>
 
           <nav className="flex justify-between items-center gap-12 pt-4">
-            <a href="#" className="text-3xl">
+            <Link href="/" className="text-3xl">
               Logo
-            </a>
+            </Link>
 
             <div className="w-1/2 mx-auto">
               <div className="flex items-center rounded bg-white">
