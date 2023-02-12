@@ -4,28 +4,28 @@ const StoreContext = createContext();
 
 export const initialState = {
   user: null,
-  mealPlan: null,
-  workoutPlan: null,
-  exercises: [],
+  cart: null,
+  favorites: null,
+  products: [],
 };
 
 export const actionType = {
   SET_USER: 'SET_USER',
-  SET_MEAL_PLAN: 'SET_MEAL_PLAN',
-  SET_WORKOUT_PLAN: 'SET_WORKOUT_PLAN',
-  SET_EXERCISES: 'SET_EXERCISES',
+  SET_CART: 'SET_CART',
+  SET_FAVORITES: 'SET_FAVORITES',
+  SET_PRODUCTS: 'SET_PRODUCTS',
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
     case actionType.SET_USER:
       return { ...state, user: action.user };
-    case actionType.SET_MEAL_PLAN:
-      return { ...state, mealPlan: action.mealPlan };
-    case actionType.SET_WORKOUT_PLAN:
-      return { ...state, workoutPlan: action.workoutPlan };
-    case actionType.SET_EXERCISES:
-      return { ...state, exercises: action.exercises };
+    case actionType.SET_CART:
+      return { ...state, cart: action.cart };
+    case actionType.SET_FAVORITES:
+      return { ...state, favorites: action.favorites };
+    case actionType.SET_PRODUCTS:
+      return { ...state, products: action.products };
 
     default:
       return state;

@@ -102,8 +102,8 @@ const Header = () => {
               </Menu.Items>
             </Menu>
             <div className="flex items-center gap-8 ml-6">
-              <Link href="#">Home</Link>
-              <Link href="#">Our Store</Link>
+              <Link href="/">Home</Link>
+              <Link href="/store">Our Store</Link>
               <Link href="#">Blog</Link>
               <Link href="#">Contact</Link>
             </div>
