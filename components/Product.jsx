@@ -17,12 +17,7 @@ const Product = ({ product }) => {
         <HiOutlineHeart className="absolute h-5 w-5 cursor-pointer top-1 right-1 text-white hover:fill-red-600 hover:text-red-600" />
       </picture>
 
-      <Link
-        href={`/brand/${product.brand}`}
-        className="text-orange-600 text-sm mb-4"
-      >
-        {product.brand}
-      </Link>
+      <p className="text-orange-600 text-sm mb-4">{product.brand}</p>
       <p className="font-semibold">{product.title}</p>
       <div className="flex my-3">
         <HiStar className="fill-yellow-500 h-3 w-3" />

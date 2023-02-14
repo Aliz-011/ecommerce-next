@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext } from 'react';
+import { createContext, useReducer, useContext, useEffect } from 'react';
 
 const StoreContext = createContext();
 
@@ -33,10 +33,14 @@ export const reducer = (state, action) => {
 };
 
 export function StoreProvider({ children }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const value = { state, dispatch };
+  useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(state.user));
+  }, [state]);
+
   return (
-    <StoreContext.Provider value={useReducer(reducer, initialState)}>
-      {children}
-    </StoreContext.Provider>
+    <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
   );
 }
 

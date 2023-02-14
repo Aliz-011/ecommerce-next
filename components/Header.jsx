@@ -14,6 +14,12 @@ const Header = () => {
     { href: '/womenswear', label: 'womenswear' },
     { href: '/elektronik', label: 'elektronik' },
   ];
+
+  const logout = async () => {
+    await fetch('http://localhost:1000/api/v1/auth/logout');
+    localStorage.removeItem('user');
+  };
+
   return (
     <header>
       <div className="py-4 bg-slate-900 text-white">
@@ -63,6 +69,17 @@ const Header = () => {
                 <AiOutlineHeart className="fill-red-700" />
                 <Link href={'/favorite'}>Favorite</Link>
               </div>
+              {/* {user ? (
+                <div className="flex items-center gap-1 cursor-pointer">
+                  <AiOutlineUser />
+                  <span onClick={logout}>Logout</span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-1 cursor-pointer">
+                  <AiOutlineUser />
+                  <Link href={'/login'}>Login</Link>
+                </div>
+              )} */}
               <div className="flex items-center gap-1 cursor-pointer">
                 <AiOutlineUser />
                 <Link href={'/login'}>Login</Link>
